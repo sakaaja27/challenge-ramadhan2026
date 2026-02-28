@@ -1,0 +1,160 @@
+:root {
+  --cream: #fdf6e3;
+  --parchment: #f5e6c8;
+  --gold: #c8972a;
+  --gold-lt: #e8b84b;
+  --green: #1a4731;
+  --green-md: #2d6a4f;
+  --green-lt: #52b788;
+  --text: #2c1a0e;
+  --text-lt: #5c3d1e;
+  --shadow: rgba(44, 26, 14, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lora", Georgia, serif;
+  background-color: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(200, 151, 42, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(29, 71, 49, 0.07) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(160deg, var(--green) 0%, #0d2e1e 100%);
+  color: var(--cream);
+  text-align: center;
+  padding: 3.5rem 1.5rem 4rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 18px,
+    rgba(200, 151, 42, 0.06) 18px,
+    rgba(200, 151, 42, 0.06) 19px
+  );
+}
+
+header::after {
+  content: "🌙";
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 4rem;
+  opacity: 0.15;
+  color: var(--gold-lt);
+}
+
+.header-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image:
+    radial-gradient(
+      1.5px 1.5px at 15% 25%,
+      rgba(255, 215, 80, 0.7) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1px 1px at 40% 15%,
+      rgba(255, 215, 80, 0.5) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1px 1px at 65% 30%,
+      rgba(255, 215, 80, 0.6) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1.5px 1.5px at 80% 10%,
+      rgba(255, 215, 80, 0.7) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1px 1px at 25% 50%,
+      rgba(255, 215, 80, 0.4) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1px 1px at 90% 40%,
+      rgba(255, 215, 80, 0.5) 0%,
+      transparent 100%
+    );
+  pointer-events: none;
+}
+
+.header-arabic {
+  font-family: "Scheherazade New", serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--gold-lt);
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+header p.subtitle {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.75;
+  font-style: italic;
+  position: relative;
+}
+
+.gold-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-lt), transparent);
+  margin: 1.2rem auto;
+}

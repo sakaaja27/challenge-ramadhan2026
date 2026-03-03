@@ -20,5 +20,114 @@
       <a href="index.html">📿 Doa Ramadhan</a>
       <a href="zikir.html" class="active">🌿 Hitung Zikir</a>
     </nav>
+
+    <main>
+      <section aria-labelledby="zikir-heading">
+        <div class="zikir-hero">
+          <div class="zikir-name-wrap">
+            <span class="zikir-select-label">Pilih Dzikir</span>
+            <div class="zikir-pills" id="zikirPills">
+              <button class="zikir-pill active" data-idx="0">
+                Subhanallah
+              </button>
+              <button class="zikir-pill" data-idx="1">Alhamdulillah</button>
+              <button class="zikir-pill" data-idx="2">Allahu Akbar</button>
+              <button class="zikir-pill" data-idx="3">Istighfar</button>
+              <button class="zikir-pill" data-idx="4">Tahlil</button>
+            </div>
+          </div>
+
+          <div class="zikir-name-wrap" id="zikirTextBlock">
+            <p class="doa-arabic" id="zikirArabic">سُبْحَانَ اللّٰهِ</p>
+            <p class="zikir-latin" id="zikirLatin">Subhānallāh</p>
+            <p class="zikir-meaning" id="zikirMeaning">Maha Suci Allah</p>
+          </div>
+
+          <div class="target-selector">
+            <label>Target:</label>
+            <button class="target-btn" data-target="33">33×</button>
+            <button class="target-btn active" data-target="100">100×</button>
+            <button class="target-btn" data-target="99">99×</button>
+            <button class="target-btn" data-target="200">200×</button>
+          </div>
+
+          <div
+            class="counter-ring-wrap"
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            id="counterRingWrap"
+          >
+            <svg class="counter-svg" viewBox="0 0 240 240">
+              <circle class="ring-bg" cx="120" cy="120" r="105" />
+              <circle
+                class="ring-progress"
+                id="ringProgress"
+                cx="120"
+                cy="120"
+                r="105"
+              />
+            </svg>
+            <div class="counter-inner">
+              <span class="counter-number" id="counterNumber">0</span>
+              <span class="counter-label">dzikir</span>
+              <span class="counter-target-display" id="targetDisplay"
+                >/ 100</span
+              >
+            </div>
+          </div>
+
+          <div class="notif-area">
+            <div
+              class="notif-badge"
+              id="notifBadge"
+              role="alert"
+              aria-live="polite"
+            >
+              <span class="notif-icon">🎉</span>
+              <div>
+                <span class="notif-arabic">مَاشَاءَ اللّٰهُ</span>
+                <div
+                  style="font-size: 0.82rem; opacity: 0.9; margin-top: 0.2rem"
+                >
+                  Target tercapai! Allāhumma inna laka alhamd.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button
+              class="btn-reset"
+              id="btnReset"
+              title="Reset ke 0"
+              aria-label="Reset hitungan"
+            >
+              ↺
+            </button>
+            <button class="btn-tap" id="btnTap" aria-label="Tambah dzikir">
+              +
+            </button>
+            <div style="width: 52px"></div>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="history-heading" class="history-section">
+        <h3 id="history-heading">📋 Riwayat Sesi</h3>
+        <ul class="history-list" id="historyList">
+          <li class="empty-history">Belum ada riwayat. Mulai berdzikir!</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-arabic">اَللّٰهُمَّ تَقَبَّلْ مِنَّا</div>
+      <p>Semoga setiap dzikir dicatat sebagai amal kebaikan.</p>
+      <p style="margin-top: 0.6rem; font-size: 0.78rem; opacity: 0.6">
+        Dibuat dengan <span class="heart">♥</span> untuk umat Muslim
+        &nbsp;|&nbsp; Ramadhan 1446 H
+      </p>
+    </footer>
   </body>
 </html>

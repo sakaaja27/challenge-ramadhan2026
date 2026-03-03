@@ -232,7 +232,7 @@ main {
   position: relative;
   z-index: 1;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -429,7 +429,7 @@ article.doa-card:hover {
   line-height: 1.8;
   background: rgba(200, 151, 42, 0.07);
   border-radius: 8px;
-  padding: 0.75rem 1rem;
+  padding: 0.80rem 1rem;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
     0 4px 12px rgba(0, 0, 0, 0.05);
@@ -493,6 +493,9 @@ footer .heart {
 }
 
 @media (max-width: 768px) {
+  main {
+    padding: 0.80rem;
+  }
   .nav-sep {
     display: none;
   }

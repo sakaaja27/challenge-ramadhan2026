@@ -1,0 +1,448 @@
+.zikir-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+  border: 1px solid rgba(200, 151, 42, 0.15);
+  border-radius: 14px;
+  padding: 1.5rem 1.5rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 16px rgba(44, 26, 14, 0.07);
+}
+
+.target-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.target-selector label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+}
+
+.target-btn {
+  border: 1.5px solid rgba(200, 151, 42, 0.4);
+  background: transparent;
+  color: var(--text-lt);
+  font-family: "Lora", serif;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.target-btn:hover {
+  background: rgba(200, 151, 42, 0.1);
+}
+
+.target-btn.active {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 3px 12px rgba(200, 151, 42, 0.35);
+}
+
+.counter-ring-wrap {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+}
+
+.counter-svg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: rgba(200, 151, 42, 0.12);
+  stroke-width: 8;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 659; /* 2π × 105 */
+  stroke-dashoffset: 659;
+  transition:
+    stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.3s;
+  filter: drop-shadow(0 0 6px rgba(200, 151, 42, 0.4));
+}
+
+.ring-progress.complete {
+  stroke: var(--green-lt);
+  filter: drop-shadow(0 0 8px rgba(82, 183, 136, 0.5));
+}
+
+.counter-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.counter-number {
+  font-family: "Playfair Display", serif;
+  font-size: 4.2rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+  transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.counter-number.bump {
+  transform: scale(1.18);
+}
+
+.counter-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  opacity: 0.7;
+}
+
+.counter-target-display {
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+.zikir-name-wrap {
+  text-align: center;
+  width: 100%;
+}
+
+.zikir-select-label {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.zikir-arabic {
+  font-family: "Scheherazade New", serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--text);
+  direction: rtl;
+  line-height: 1.8;
+  background: var(--parchment);
+  border-radius: 14px;
+  padding: 0.8rem 1.5rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 16px rgba(44, 26, 14, 0.07);
+  margin-bottom: 0.5rem;
+}
+
+.zikir-latin {
+  font-style: italic;
+  font-size: 0.93rem;
+  color: var(--text-lt);
+  line-height: 1.9;
+  border-left: 2px solid var(--gold-lt);
+  padding-left: 0.6rem;
+  text-align: left;
+  margin-bottom: 0.9rem;
+}
+
+.zikir-meaning {
+  font-size: 0.82rem;
+  color: var(--text-lt);
+  margin-top: 0.35rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(200, 151, 42, 0.07);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.zikir-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.zikir-pill {
+  border: 1.5px solid rgba(200, 151, 42, 0.3);
+  background: transparent;
+  font-family: "Lora", serif;
+  font-size: 0.8rem;
+  color: var(--text-lt);
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.zikir-pill:hover {
+  background: rgba(200, 151, 42, 0.08);
+}
+
+.zikir-pill.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 3px 10px rgba(29, 71, 49, 0.25);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-tap {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--gold) 0%, #a07020 100%);
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  box-shadow:
+    0 6px 24px rgba(200, 151, 42, 0.45),
+    0 2px 0 #7a5218;
+  transition:
+    transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-tap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 255, 255, 0.25) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.btn-tap:active {
+  transform: scale(0.88);
+  box-shadow:
+    0 2px 10px rgba(200, 151, 42, 0.3),
+    0 1px 0 #7a5218;
+}
+
+.btn-tap.pressed {
+  animation: tapPulse 0.2s ease;
+}
+
+.btn-reset {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(200, 151, 42, 0.35);
+  background: transparent;
+  color: var(--text-lt);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-reset:hover {
+  background: rgba(200, 151, 42, 0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-reset:active {
+  transform: scale(0.9);
+}
+
+.notif-area {
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.notif-badge {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-md) 100%);
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 50px;
+  font-family: "Lora", serif;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 24px rgba(29, 71, 49, 0.35);
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.notif-badge.show {
+  display: flex;
+}
+
+.notif-badge .notif-icon {
+  font-size: 1.4rem;
+}
+
+.notif-arabic {
+  font-family: "Scheherazade New", serif;
+  font-size: 1.2rem;
+  color: var(--gold-lt);
+  direction: rtl;
+}
+
+.history-section {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  border: 1px solid rgba(200, 151, 42, 0.15);
+  border-radius: 14px;
+  background: var(--parchment);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 16px rgba(44, 26, 14, 0.07);
+}
+
+.history-section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-md) 100%);
+  border-radius: 14px 14px 0 0;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(44, 26, 14, 0.06);
+  border-left: 3px solid var(--green-lt);
+  animation: fadeUp 0.3s ease both;
+}
+
+.history-item .h-name {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.history-item .h-count {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.history-item .h-time {
+  font-size: 0.75rem;
+  color: var(--text-lt);
+  opacity: 0.7;
+}
+
+.empty-history {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-lt);
+  opacity: 0.6;
+  font-style: italic;
+  padding: 1.5rem;
+}
+
+@keyframes tapPulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes ringGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px rgba(82, 183, 136, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(82, 183, 136, 0.8));
+  }
+}
+
+.ring-progress.complete {
+  animation: ringGlow 1.5s ease infinite;
+}
+
+@media (max-width: 480px) {
+  .counter-ring-wrap {
+    width: 200px;
+    height: 200px;
+  }
+  .counter-number {
+    font-size: 3.4rem;
+  }
+  .btn-tap {
+    width: 76px;
+    height: 76px;
+    font-size: 1.9rem;
+  }
+  .zikir-hero {
+    padding: 2rem 1rem;
+  }
+}

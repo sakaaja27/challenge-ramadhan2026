@@ -203,7 +203,22 @@ header p.subtitle {
   box-shadow: 0 4px 14px rgba(200, 151, 42, 0.35);
 }
 
-main {
+.nav-tabs--sub {
+  background: linear-gradient(to bottom, #1a4731 0%, #163d2a 100%);
+  padding: .75rem 1rem;
+  gap: .75rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  position: sticky;
+  top: 64px;
+}
+
+.nav-tabs--sub a {
+  font-size: .82rem;
+  padding: .35rem 1rem;
+  opacity: .8;
+}
+
+
   position: relative;
   z-index: 1;
   margin: 0 auto;
@@ -504,4 +519,4 @@ footer .heart {
     opacity: 1;
     transform: translateY(0);
   }
-}
+}y

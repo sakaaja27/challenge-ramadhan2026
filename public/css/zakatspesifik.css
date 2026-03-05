@@ -104,3 +104,82 @@ main {
   flex-direction: column;
   gap: 0.4rem;
 }
+.harga-emas-row {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(200, 151, 42, 0.25);
+}
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.label-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: rgba(200, 151, 42, 0.15);
+  color: var(--gold);
+  padding: 0.1rem 0.5rem;
+  border-radius: 50px;
+}
+.input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid rgba(200, 151, 42, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-wrap:focus-within {
+  border-color: var(--green-md);
+  box-shadow: 0 0 0 3px rgba(29, 71, 49, 0.08);
+}
+.input-prefix,
+.input-suffix {
+  padding: 0 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-lt);
+  background: var(--parchment);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border-right: 1.5px solid rgba(200, 151, 42, 0.2);
+  user-select: none;
+}
+.input-suffix {
+  border-right: none;
+  border-left: 1.5px solid rgba(200, 151, 42, 0.2);
+}
+
+input[type="number"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: transparent;
+  min-width: 0;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-hint {
+  font-size: 0.75rem;
+  color: var(--text-lt);
+  opacity: 0.7;
+  font-style: italic;
+}

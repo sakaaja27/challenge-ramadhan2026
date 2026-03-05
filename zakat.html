@@ -113,12 +113,36 @@
                   />
                   <span class="input-suffix">gram</span>
                 </div>
-                <p class="input-hint">Emas yang telah dimiliki minimal 1 tahun (haul).</p>
+                <p class="input-hint">
+                  Emas yang telah dimiliki minimal 1 tahun (haul).
+                </p>
               </div>
             </div>
+            <div class="input-row harga-emas-row">
+              <label for="hargaEmas">
+                Harga Emas Saat Ini
+                <span class="label-badge">Per gram</span>
+              </label>
+              <div class="input-wrap">
+                <span class="input-prefix">Rp</span>
+                <input
+                  type="number"
+                  id="hargaEmas"
+                  placeholder="1.700.000"
+                  min="0"
+                  inputmode="numeric"
+                  value="1700000"
+                />
+              </div>
+              <p class="input-hint">
+                Cek harga emas terkini di logam mulia / Antam.
+              </p>
+            </div>
           </div>
+          <div class="zakat-divider"></div>
         </div>
       </div>
     </main>
+    <script src="public/js/zakat.js"></script>
   </body>
 </html>

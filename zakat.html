@@ -39,6 +39,68 @@
           </p>
         </div>
       </div>
+      <div class="container-narrow">
+        <div class="zakat-card">
+          <div class="zakat-step">
+            <div class="step-label">
+              <span class="step-num">1</span>
+              <span>Pilih Jenis Zakat</span>
+            </div>
+            <div class="jenis-grid">
+              <button
+                class="jenis-btn active"
+                data-jenis="penghasilan"
+                type="button"
+              >
+                <span class="jenis-icon">💼</span>
+                <span class="jenis-title">Zakat Penghasilan</span>
+                <span class="jenis-desc">Gaji & pendapatan lainnya</span>
+              </button>
+              <button class="jenis-btn" data-jenis="emas" type="button">
+                <span class="jenis-icon">🥇</span>
+                <span class="jenis-title">Zakat Emas</span>
+                <span class="jenis-desc">Emas yang tersimpan ≥ 1 haul</span>
+              </button>
+            </div>
+          </div>
+          <div class="zakat-divider"></div>
+          <div class="zakat-step">
+            <div class="step-label">
+              <span class="step-num">2</span>
+              <span>Masukkan Data</span>
+            </div>
+            <div class="form-group" id="formPenghasilan">
+              <div class="input-row">
+                <label for="gaji">Gaji Bulanan</label>
+                <div class="input-wrap">
+                  <span class="input-prefix">Rp</span>
+                  <input
+                    type="number"
+                    id="gaji"
+                    placeholder="0"
+                    min="0"
+                    inputmode="numeric"
+                  />
+                </div>
+              </div>
+              <div class="input-row">
+                <label for="pendapatanLain">Penghasilan Lain</label>
+                <div class="input-wrap">
+                  <span class="input-prefix">Rp</span>
+                  <input
+                    type="number"
+                    id="pendapatanLain"
+                    placeholder="0"
+                    min="0"
+                    inputmode="numeric"
+                  />
+                </div>
+                <p class="input-hint">Bonus, freelance, dividen, dsb.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

@@ -140,6 +140,55 @@
             </div>
           </div>
           <div class="zakat-divider"></div>
+          <div class="zakat-step">
+            <div class="step-label">
+              <span class="step-num">3</span>
+              <span>Hitung Zakat</span>
+            </div>
+            <button class="btn-hitung" id="btnHitung" type="button">
+              Hitung Zakat Saya
+            </button>
+            <p class="error-msg hidden" id="errorMsg">
+              ⚠️ Mohon isi semua kolom yang diperlukan.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="continaer-narrow">
+        <div class="result-card hidden" id="resultCard">
+          <div class="result-header">
+            <span class="result-icon" id="resultIcon">📊</span>
+            <div>
+              <h2 class="result-title">Hasil Perhitungan Zakat</h2>
+              <p class="result-subtitle" id="resultSubtitle">
+                Zakat Penghasilan
+              </p>
+            </div>
+          </div>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-item-label">Total Harta / Penghasilan</span>
+              <span class="result-item-value" id="rTotal">Rp 0</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-item-label">Nisab (85 × harga emas)</span>
+              <span class="result-item-value" id="rNisab">Rp 0</span>
+            </div>
+            <div class="result-item result-item--status">
+              <span class="result-item-label">Status Kewajiban</span>
+              <span class="status-badge" id="rStatus">–</span>
+            </div>
+
+            <div class="result-item result-item--zakat" id="zakatRow">
+              <span class="result-item-label"
+                >Zakat yang Harus Dibayar <em>(2,5%)</em></span
+              >
+              <span class="result-item-value result-item-value--big" id="rZakat"
+                >Rp 0</span
+              >
+            </div>
+          </div>
         </div>
       </div>
     </main>

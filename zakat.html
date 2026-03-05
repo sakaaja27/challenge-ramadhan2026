@@ -39,9 +39,9 @@
           </p>
         </div>
       </div>
-      <div class="container-narrow">
-        <div class="zakat-layout">
-          <div class="zakat-card">
+
+      <div class="zakat-layout">
+        <div class="zakat-card">
           <div class="zakat-step">
             <div class="step-label">
               <span class="step-num">1</span>
@@ -65,6 +65,7 @@
             </div>
           </div>
           <div class="zakat-divider"></div>
+
           <div class="zakat-step">
             <div class="step-label">
               <span class="step-num">2</span>
@@ -72,11 +73,11 @@
             </div>
             <div class="form-group" id="formPenghasilan">
               <div class="input-row">
-                <label for="gaji">Gaji Bulanan</label>
+                <label for="gaji">Gaji Tahunan</label>
                 <div class="input-wrap">
                   <span class="input-prefix">Rp</span>
                   <input
-                    type="number"
+                    type="text"
                     id="gaji"
                     placeholder="0"
                     min="0"
@@ -85,11 +86,11 @@
                 </div>
               </div>
               <div class="input-row">
-                <label for="pendapatanLain">Penghasilan Lain</label>
+                <label for="pendapatanLain">Penghasilan Lain Tahunan</label>
                 <div class="input-wrap">
                   <span class="input-prefix">Rp</span>
                   <input
-                    type="number"
+                    type="text"
                     id="pendapatanLain"
                     placeholder="0"
                     min="0"
@@ -105,7 +106,7 @@
                 <label for="jumlahEmas">Total Emas yang Dimiliki</label>
                 <div class="input-wrap">
                   <input
-                    type="number"
+                    type="text"
                     id="jumlahEmas"
                     placeholder="0"
                     min="0"
@@ -127,12 +128,12 @@
               <div class="input-wrap">
                 <span class="input-prefix">Rp</span>
                 <input
-                  type="number"
+                  type="text"
                   id="hargaEmas"
                   placeholder="1.700.000"
                   min="0"
                   inputmode="numeric"
-                  value="1700000"
+                  value="3.045.000"
                 />
               </div>
               <p class="input-hint">
@@ -141,6 +142,7 @@
             </div>
           </div>
           <div class="zakat-divider"></div>
+
           <div class="zakat-step">
             <div class="step-label">
               <span class="step-num">3</span>
@@ -153,8 +155,43 @@
               ⚠️ Mohon isi semua kolom yang diperlukan.
             </p>
           </div>
+        </div>
+
+        <div class="result-card hidden" id="resultCard">
+          <div class="result-empty" id="resultEmpty">
+            <div class="result-empty-icon">🕌</div>
+            <p class="result-empty-title">Hasil Perhitungan</p>
+            <p class="result-empty-sub">
+              Isi form di sebelah kiri lalu klik tombol hitung untuk melihat
+              hasil zakat Anda.
+            </p>
+            <div class="result-empty-steps">
+              <div class="empty-step">
+                <span class="empty-step-num">1</span>
+                <span>Pilih jenis zakat</span>
+              </div>
+              <div class="empty-step-arrow">↓</div>
+              <div class="empty-step">
+                <span class="empty-step-num">2</span>
+                <span>Masukkan data penghasilan / emas</span>
+              </div>
+              <div class="empty-step-arrow">↓</div>
+              <div class="empty-step">
+                <span class="empty-step-num">3</span>
+                <span>Klik <strong>Hitung Zakat Saya</strong></span>
+              </div>
+            </div>
+            <div class="result-empty-hadith">
+              <p class="result-empty-arabic">
+                مَنْ أَدَّى زَكَاةَ مَالِهِ فَقَدْ ذَهَبَ عَنْهُ شَرُّهُ
+              </p>
+              <p class="result-empty-hadith-text">
+                Barang siapa menunaikan zakat hartanya, maka telah hilang
+                kejelekannya.
+              </p>
+            </div>
           </div>
-          <div class="result-card hidden" id="resultCard">
+
           <div class="result-header">
             <span class="result-icon" id="resultIcon">📊</span>
             <div>
@@ -188,10 +225,12 @@
               >
             </div>
           </div>
-          <div class="formula-box" id="formulaBox">
+
+          <div class="formula-box hidden" id="formulaBox">
             <p class="formula-title">📐 Rincian Perhitungan</p>
             <ul class="formula-list" id="formulaList"></ul>
           </div>
+
           <div class="result-cta">
             <p>Salurkan zakat Anda melalui lembaga amil zakat terpercaya.</p>
             <a
@@ -204,13 +243,12 @@
             </a>
           </div>
         </div>
-        </div>
       </div>
     </main>
     <footer>
       <div class="footer-arabic">خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً</div>
       <p>Ambillah zakat dari harta mereka — QS. At-Tawbah: 103</p>
-      <p style="margin-top:.6rem; font-size:.78rem; opacity:.6">
+      <p style="margin-top: 0.6rem; font-size: 0.78rem; opacity: 0.6">
         Dibuat dengan <span class="heart">♥</span> untuk umat Muslim
         &nbsp;|&nbsp; Ramadhan 1446 H
       </p>

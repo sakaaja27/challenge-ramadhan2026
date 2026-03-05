@@ -18,12 +18,16 @@ const rStatus = document.getElementById("rStatus");
 const rZakat = document.getElementById("rZakat");
 const zakatRow = document.getElementById("zakatRow");
 const formulaList = document.getElementById("formulaList");
+const formulaBox = document.getElementById("formulaBox");
 
 const fmt = (n) =>
   "Rp " + Math.round(n).toLocaleString("id-ID", { minimumFractionDigits: 0 });
 
 const fmtGram = (n) =>
-  n.toLocaleString("id-ID", { maximumFractionDigits: 2 }) + " gram";
+  n.toLocaleString("id-ID", {
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
+  }) + " gram";
 function showError(msg) {
   errorMsg.textContent = msg || "⚠️ Mohon isi semua kolom yang diperlukan.";
   errorMsg.classList.remove("hidden");
@@ -31,6 +35,32 @@ function showError(msg) {
 function hideError() {
   errorMsg.classList.add("hidden");
 }
+
+function formatInputNumber(input) {
+  let value = input.value.replace(/[^\d]/g, "");
+  if (value === "") {
+    input.value = "";
+    return;
+  }
+  try {
+    const formatted = BigInt(value).toLocaleString("id-ID");
+    input.value = formatted;
+  } catch (e) {
+    input.value = value;
+  }
+}
+function parseFormattedNumber(str) {
+  if (!str) return 0;
+
+  const clean = str.replace(/\./g, "").replace(/,/g, "");
+
+  try {
+    return Number(clean);
+  } catch {
+    return 0;
+  }
+}
+
 jenisBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     jenisZakat = btn.dataset.jenis;
@@ -45,6 +75,14 @@ jenisBtns.forEach((btn) => {
       formPenghasilan.classList.add("hidden");
     }
     resultCard.classList.add("hidden");
+    formulaBox.classList.add("hidden");
+    rTotal.textContent = "Rp 0";
+    rNisab.textContent = "Rp 0";
+    rStatus.textContent = "–";
+    rStatus.className = "status-badge";
+    rZakat.textContent = "Rp 0";
+    formulaList.innerHTML = "";
+    document.getElementById("resultEmpty").style.display = "flex";
     hideError();
   });
 });
@@ -52,7 +90,7 @@ jenisBtns.forEach((btn) => {
 btnHitung.addEventListener("click", () => {
   hideError();
 
-  const hargaEmas = parseFloat(inpHargaEmas.value);
+  const hargaEmas = parseFormattedNumber(inpHargaEmas.value);
   if (!hargaEmas || hargaEmas <= 0) {
     showError("⚠️ Masukkan harga emas per gram yang valid.");
     return;
@@ -64,8 +102,8 @@ btnHitung.addEventListener("click", () => {
   const steps = [];
 
   if (jenisZakat === "penghasilan") {
-    const gaji = parseFloat(inpGaji.value) || 0;
-    const lain = parseFloat(inpPendapatan.value) || 0;
+    const gaji = parseFormattedNumber(inpGaji.value) || 0;
+    const lain = parseFormattedNumber(inpPendapatan.value) || 0;
 
     if (gaji <= 0 && lain <= 0) {
       showError("⚠️ Masukkan minimal satu sumber penghasilan.");
@@ -84,7 +122,7 @@ btnHitung.addEventListener("click", () => {
     resultSubtitle.textContent = "Zakat Penghasilan";
     resultIcon.textContent = "💼";
   } else {
-    const jumlahEmas = parseFloat(inpJumlahEmas.value);
+    const jumlahEmas = parseFormattedNumber(inpJumlahEmas.value);
 
     if (!jumlahEmas || jumlahEmas <= 0) {
       showError("⚠️ Masukkan jumlah emas yang valid (dalam gram).");
@@ -129,13 +167,19 @@ btnHitung.addEventListener("click", () => {
   }
 
   formulaList.innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
+  document.getElementById("resultEmpty").style.display = "none";
+  formulaBox.classList.remove("hidden");
   resultCard.classList.remove("hidden");
+  resultCard.classList.add("show");
   setTimeout(() => {
     resultCard.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 100);
 });
 [inpGaji, inpPendapatan, inpHargaEmas, inpJumlahEmas].forEach((inp) => {
   if (!inp) return;
+  inp.addEventListener("input", () => {
+    formatInputNumber(inp);
+  });
   inp.addEventListener("keydown", (e) => {
     if (e.key === "Enter") btnHitung.click();
   });

@@ -328,3 +328,61 @@ main {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(200,151,42,.25), 0 1px 0 #7a5218;
 }
+
+/* panel quran */
+.quran-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.q-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.q-input-group label {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-lt);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.q-input-group input {
+  border: 1.5px solid rgba(200,151,42,.3);
+  border-radius: 10px;
+  padding: .65rem 1rem;
+  font-family: 'Lora', serif;
+  font-size: .95rem;
+  color: var(--text);
+  background: var(--cream);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+}
+.q-input-group input:focus {
+  border-color: var(--green-md);
+  box-shadow: 0 0 0 3px rgba(29,71,49,.08);
+}
+.quran-done-wrap {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .8rem 1rem;
+  background: var(--parchment);
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(200,151,42,.2);
+  cursor: pointer;
+}
+.quran-done-wrap input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--green);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.quran-done-wrap span {
+  font-size: .85rem;
+  color: var(--text);
+}

@@ -39,3 +39,16 @@ function setData(section, value) {
     all[section] = value
     saveData(all)
 }
+
+function getHariKe() {
+    const START = new Date("2026-03-08");
+    const now = new Date()
+    const diff = Math.floor((now - START) / (1000 * 60 * 60 * 24)) + 1
+    return Math.max(1, Math.min(30, diff))
+}
+function initDate() {
+    const d = new Date();
+    const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("summaryDate").textContent = d.toLocaleDateString('id-ID', opts);
+    document.getElementById("hariKe").textContent = getHariKe();
+}

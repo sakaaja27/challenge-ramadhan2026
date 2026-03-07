@@ -28,19 +28,115 @@
     </nav>
 
     <main>
-        <div class="daily-summary">
-            <div class="summary-top">
-                <div>
-                    <div class="summary-title">Progress Ibadah hari ini</div>
-                    <div class="summary-date" id="summaryDate">-</div>
-                </div>
-                <div class="summary-pct" id="summaryPct">0 <span>%</span></div>
-            </div>
-            <div class="summary-bar-wrap">
-                <div class="summary-bar-fill" id="summaryBar"></div>
-            </div>
-            <div class="summary-status" id="summaryStatus">Mulai catat ibadahmu hari ini 🌙</div>
+      <div class="daily-summary">
+        <div class="summary-top">
+          <div>
+            <div class="summary-title">Progress Ibadah hari ini</div>
+            <div class="summary-date" id="summaryDate">-</div>
+          </div>
+          <div class="summary-pct" id="summaryPct">0 <span>%</span></div>
         </div>
+        <div class="summary-bar-wrap">
+          <div class="summary-bar-fill" id="summaryBar"></div>
+        </div>
+        <div class="summary-status" id="summaryStatus">
+          Mulai catat ibadahmu hari ini 🌙
+        </div>
+      </div>
+      <div class="tab-nav" role="tablist" aria-label="Kategori ibadah">
+        <button
+          class="tab-btn active"
+          data-tab="shalat"
+          role="tab"
+          aria-selected="true"
+        >
+          <span class="tab-icon">🕌</span>
+          <span>Shalat</span>
+          <span class="tab-pct" id="pctShalat">0%</span>
+        </button>
+        <button
+          class="tab-btn"
+          data-tab="quran"
+          role="tab"
+          aria-selected="false"
+        >
+          <span class="tab-icon">📖</span>
+          <span>Baca Qur'an</span>
+          <span class="tab-pct" id="pctQuran">0%</span>
+        </button>
+        <button
+          class="tab-btn"
+          data-tab="puasa"
+          role="tab"
+          aria-selected="false"
+        >
+          <span class="tab-icon">🌙</span>
+          <span>Puasa</span>
+          <span class="tab-pct" id="pctPuasa">0%</span>
+        </button>
+        <button
+          class="tab-btn"
+          data-tab="dzikir"
+          role="tab"
+          aria-selected="false"
+        >
+          <span class="tab-icon">📿</span>
+          <span>Dzikir</span>
+          <span class="tab-pct" id="pctDzikir">0%</span>
+        </button>
+      </div>
+      <div class="tab-panel active" id="panel-shalat" role="tabpanel">
+        <div class="todo-card">
+          <div class="card-header" data-dec="🕌">
+            <span class="card-header-icon">🕌</span>
+            <div>
+              <h2>Shalat Wajib</h2>
+              <p>Centang shalat yang telah dikerjakan hari ini</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-progress">
+              <div class="card-progress-top">
+                <span class="card-progress-label">Progress</span>
+                <span class="card-progress-val" id="shalatVal">0 / 5</span>
+              </div>
+              <div class="prog-bar">
+                <div class="prog-fill" id="shalatBar" style="width: 0%"></div>
+              </div>
+              <div class="card-status" id="shalatStatus">
+                Belum ada shalat yang dicatat.
+              </div>
+            </div>
+
+            <div class="shalat-grid">
+              <div class="shalat-item">
+                <input type="checkbox" id="subuh" data-shalat="subuh" />
+                <label for="subuh">Subuh</label>
+              </div>
+              <div class="shalat-item">
+                <input type="checkbox" id="dzuhur" data-shalat="dzuhur" />
+                <label for="dzuhur">Dzuhur</label>
+              </div>
+              <div class="shalat-item">
+                <input type="checkbox" id="ashar" data-shalat="ashar" />
+                <label for="ashar">Ashar</label>
+              </div>
+              <div class="shalat-item">
+                <input type="checkbox" id="maghrib" data-shalat="maghrib" />
+                <label for="maghrib">Maghrib</label>
+              </div>
+              <div class="shalat-item">
+                <input type="checkbox" id="isya" data-shalat="isya" />
+                <label for="isya">Isya</label>
+              </div>
+            </div>
+
+            <button class="btn-save" onclick="saveShalat()">
+              💾 Simpan Shalat
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

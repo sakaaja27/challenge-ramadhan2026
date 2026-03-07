@@ -17,22 +17,26 @@ main {
   box-shadow: 0 8px 28px rgba(29, 71, 49, 0.28);
 }
 .daily-summary::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
-    45deg, transparent, transparent 18px,
-    rgba(255,255,255,.04) 18px, rgba(255,255,255,.04) 19px
+    45deg,
+    transparent,
+    transparent 18px,
+    rgba(255, 255, 255, 0.04) 18px,
+    rgba(255, 255, 255, 0.04) 19px
   );
   pointer-events: none;
 }
 .daily-summary::after {
-  content: '☽';
+  content: "☽";
   position: absolute;
-  right: 1.5rem; top: 50%;
+  right: 1.5rem;
+  top: 50%;
   transform: translateY(-50%);
   font-size: 5rem;
-  opacity: .07;
+  opacity: 0.07;
   color: var(--gold-lt);
   pointer-events: none;
 }
@@ -45,19 +49,19 @@ main {
   position: relative;
 }
 .summary-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.05rem;
   font-weight: 600;
-  opacity: .85;
+  opacity: 0.85;
 }
 .summary-date {
-  font-size: .78rem;
-  opacity: .65;
+  font-size: 0.78rem;
+  opacity: 0.65;
   font-style: italic;
-  margin-top: .2rem;
+  margin-top: 0.2rem;
 }
 .summary-pct {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.4rem;
   font-weight: 600;
   color: var(--gold-lt);
@@ -65,26 +69,98 @@ main {
 }
 .summary-pct span {
   font-size: 1rem;
-  opacity: .7;
+  opacity: 0.7;
 }
 .summary-bar-wrap {
   position: relative;
   height: 8px;
-  background: rgba(255,255,255,.15);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   overflow: hidden;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 .summary-bar-fill {
   height: 100%;
   border-radius: 50px;
   background: linear-gradient(90deg, var(--gold-lt), var(--gold));
-  transition: width .6s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 0 10px rgba(232,184,75,.5);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(232, 184, 75, 0.5);
 }
 .summary-status {
-  font-size: .82rem;
-  opacity: .8;
+  font-size: 0.82rem;
+  opacity: 0.8;
   font-style: italic;
   position: relative;
+}
+
+.shalat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .75rem;
+  margin-bottom: 1.2rem;
+}
+.shalat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+}
+.shalat-check {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(200,151,42,.35);
+  background: var(--cream);
+  cursor: pointer;
+  transition: all .22s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.shalat-item input[type="checkbox"] {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(200, 151, 42, 0.35);
+  background: var(--cream);
+  cursor: pointer;
+  transition: all 0.22s;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+}
+.shalat-item input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.2s;
+}
+.shalat-item input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-md) 100%);
+  border-color: var(--green);
+  box-shadow: 0 3px 12px rgba(29, 71, 49, 0.3);
+}
+.shalat-item input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.shalat-item label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  text-align: center;
 }

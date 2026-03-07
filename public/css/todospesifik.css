@@ -160,6 +160,68 @@ main {
   position: relative;
   overflow: hidden;
 }
+.card-header::after {
+  content: attr(data-dec);
+  position: absolute;
+  right: 1.2rem; top: 50%;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  opacity: .08;
+  pointer-events: none;
+}
+.card-header-icon { font-size: 1.8rem; }
+.card-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.card-header p {
+  font-size: .78rem;
+  opacity: .7;
+  font-style: italic;
+  margin-top: .15rem;
+}
+.card-body { padding: 1.4rem 1.6rem; }
+.card-progress {
+  margin-bottom: 1.2rem;
+}
+.card-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: .4rem;
+}
+.card-progress-label {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+}
+.card-progress-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green-md);
+}
+.prog-bar {
+  height: 7px;
+  background: rgba(200,151,42,.12);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.prog-fill {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--green-lt), var(--green-md));
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+.card-status {
+  font-size: .82rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-top: .5rem;
+}
 
 .shalat-grid {
   display: grid;
@@ -231,4 +293,38 @@ main {
   text-transform: uppercase;
   color: var(--text-lt);
   text-align: center;
+}
+
+/* global btn */
+.btn-save {
+  width: 100%;
+  padding: .85rem 2rem;
+  background: linear-gradient(135deg, var(--gold) 0%, #a07020 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .22s;
+  box-shadow: 0 4px 16px rgba(200,151,42,.35), 0 2px 0 #7a5218;
+  position: relative;
+  overflow: hidden;
+  margin-top: .5rem;
+}
+.btn-save::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(200,151,42,.4), 0 2px 0 #7a5218;
+}
+.btn-save:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(200,151,42,.25), 0 1px 0 #7a5218;
 }

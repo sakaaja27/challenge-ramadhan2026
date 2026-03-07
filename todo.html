@@ -137,6 +137,64 @@
           </div>
         </div>
       </div>
+      <div class="tab-panel" id="panel-quran" role="tabpanel">
+        <div class="todo-card">
+          <div class="card-header" data-dec="📖">
+            <span class="card-header-icon">📖</span>
+            <div>
+              <h2>Baca Qur'an</h2>
+              <p>Catat target dan pencapaian halaman hari ini</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-progress">
+              <div class="card-progress-top">
+                <span class="card-progress-label">Progress</span>
+                <span class="card-progress-val" id="quranVal">0%</span>
+              </div>
+              <div class="prog-bar">
+                <div class="prog-fill" id="quranBar" style="width: 0%"></div>
+              </div>
+              <div class="card-status" id="quranStatus">
+                Masukkan target dan halaman yang dibaca.
+              </div>
+            </div>
+
+            <div class="quran-inputs">
+              <div class="q-input-group">
+                <label for="quranTarget">🎯 Target Halaman</label>
+                <input
+                  type="number"
+                  id="quranTarget"
+                  placeholder="misal: 20"
+                  min="1"
+                  max="604"
+                />
+              </div>
+              <div class="q-input-group">
+                <label for="quranRead">📑 Halaman Dibaca</label>
+                <input
+                  type="number"
+                  id="quranRead"
+                  placeholder="misal: 12"
+                  min="0"
+                  max="604"
+                />
+              </div>
+            </div>
+
+            <label class="quran-done-wrap">
+              <input type="checkbox" id="quranDone" />
+              <span>✅ Tandai target hari ini sudah selesai!</span>
+            </label>
+
+            <button class="btn-save" onclick="saveQuran()">
+              💾 Simpan Qur'an
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+    <script src="public/js/todo.js"></script>
   </body>
 </html>

@@ -19,5 +19,28 @@
       <h1>Ramadhan To-Do List</h1>
       <p class="subtitle">Pantau & tingkatkan konsistensi ibadah harianmu</p>
     </header>
+
+    <nav class="nav-tabs" aria-label="Navigasi halaman">
+      <a href="index.html">📿 Doa Ramadhan</a>
+      <a href="zikir.html">🌿 Hitung Zikir</a>
+      <a href="zakat.html">🕌 Kalkulator Zakat</a>
+      <a href="todo.html" class="active">☑️ To-Do Ibadah</a>
+    </nav>
+
+    <main>
+        <div class="daily-summary">
+            <div class="summary-top">
+                <div>
+                    <div class="summary-title">Progress Ibadah hari ini</div>
+                    <div class="summary-date" id="summaryDate">-</div>
+                </div>
+                <div class="summary-pct" id="summaryPct">0 <span>%</span></div>
+            </div>
+            <div class="summary-bar-wrap">
+                <div class="summary-bar-fill" id="summaryBar"></div>
+            </div>
+            <div class="summary-status" id="summaryStatus">Mulai catat ibadahmu hari ini 🌙</div>
+        </div>
+    </main>
   </body>
 </html>

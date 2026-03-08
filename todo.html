@@ -137,6 +137,7 @@
           </div>
         </div>
       </div>
+
       <div class="tab-panel" id="panel-quran" role="tabpanel">
         <div class="todo-card">
           <div class="card-header" data-dec="📖">
@@ -194,7 +195,103 @@
           </div>
         </div>
       </div>
+
+      <div class="tab-panel" id="panel-puasa" role="tabpanel">
+        <div class="todo-card">
+          <div class="card-header" data-dec="🌙">
+            <span class="card-header-icon">🌙</span>
+            <div>
+              <h2>Kalender Puasa</h2>
+              <p>Pantau hari puasa selama 30 hari Ramadhan</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-progress">
+              <div class="card-progress-top">
+                <span class="card-progress-label">Progress Puasa</span>
+                <span class="card-progress-val" id="puasaVal">0 / 30 hari</span>
+              </div>
+              <div class="prog-bar">
+                <div class="prog-fill" id="puasaBar" style="width: 0%"></div>
+              </div>
+              <div class="card-status" id="puasaStatus">
+                Klik tanggal untuk menandai hari puasa.
+              </div>
+            </div>
+
+            <div class="puasa-top">
+              <div class="hari-ke-badge">
+                Hari ke-<span class="hari-num" id="hariKe">1</span> Ramadhan
+              </div>
+              <label class="today-check-wrap">
+                <input
+                  type="checkbox"
+                  id="puasaToday"
+                  onchange="toggleToday(this)"
+                />
+                <span>Sudah puasa hari ini</span>
+              </label>
+            </div>
+
+            <div
+              class="puasa-calendar"
+              id="puasaCalendar"
+              aria-label="Kalender puasa Ramadhan"
+            ></div>
+
+            <button class="btn-save" onclick="savePuasa()">
+              💾 Simpan Puasa
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-dzikir" role="tabpanel">
+        <div class="todo-card">
+          <div class="card-header" data-dec="📿">
+            <span class="card-header-icon">📿</span>
+            <div>
+              <h2>Dzikir Harian</h2>
+              <p>Centang dzikir yang telah dilantunkan hari ini</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-progress">
+              <div class="card-progress-top">
+                <span class="card-progress-label">Progress</span>
+                <span class="card-progress-val" id="dzikirVal">0 / 6</span>
+              </div>
+              <div class="prog-bar">
+                <div class="prog-fill" id="dzikirBar" style="width: 0%"></div>
+              </div>
+              <div class="card-status" id="dzikirStatus">
+                Mulai berdzikir dan centang yang sudah selesai.
+              </div>
+            </div>
+
+            <div class="dzikir-list" id="dzikirList"></div>
+
+            <button class="btn-save" onclick="saveDzikir()">
+              💾 Simpan Dzikir
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+    <footer>
+      <div class="footer-arabic">
+        وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا
+      </div>
+      <p>
+        Barang siapa bertaqwa kepada Allah, Dia akan memberi jalan keluar — QS.
+        At-Thalaq: 2
+      </p>
+      <p style="margin-top: 0.6rem; font-size: 0.78rem; opacity: 0.6">
+        Dibuat dengan <span class="heart">♥</span> untuk umat Muslim
+        &nbsp;|&nbsp; Ramadhan 1446 H
+      </p>
+    </footer>
+    <div class="save-toast" id="saveToast">✅ Tersimpan!</div>
     <script src="public/js/todo.js"></script>
   </body>
 </html>

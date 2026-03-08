@@ -173,7 +173,16 @@ function initQuranListeners() {
   }
   if (tgtEl)  tgtEl.addEventListener("input",  onInputChange);
   if (readEl) readEl.addEventListener("input",  onInputChange);
-  if (doneEl) doneEl.addEventListener("change", onInputChange);
+  if (doneEl) doneEl.addEventListener("change", () => {
+    const t = parseFloat(tgtEl ? tgtEl.value : "") || 0;
+    const r = parseFloat(readEl ? readEl.value : "") || 0;
+    if (doneEl.checked && (t <= 0 || r < t)) {
+      doneEl.checked = false;
+      showToast("⚠️ Halaman dibaca belum mencapai target!");
+      return;
+    }
+    onInputChange();
+  });
 }
 function saveQuran() {
   const target = document.getElementById("quranTarget").value;
@@ -291,7 +300,7 @@ function saveDzikir() {
   showToast("Dzikir tersimpan!");
 }
 
-// ─── INIT ────────────────────────────────────────────────────────────────────
+//init DOM
 document.addEventListener("DOMContentLoaded", () => {
   initTabNav();
   initDate();

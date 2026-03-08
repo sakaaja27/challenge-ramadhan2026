@@ -110,24 +110,54 @@
 
             <div class="shalat-grid">
               <div class="shalat-item">
-                <input type="checkbox" id="subuh" data-shalat="subuh" />
-                <label for="subuh">Subuh</label>
+                <label class="shalat-label" for="subuh">
+                  <input type="checkbox" id="subuh" data-shalat="subuh" />
+                  <span class="shalat-circle">
+                    <span class="shalat-check-icon">✓</span>
+                  </span>
+                  <span class="shalat-name">Subuh</span>
+                  <span class="shalat-time">04:25</span>
+                </label>
               </div>
               <div class="shalat-item">
-                <input type="checkbox" id="dzuhur" data-shalat="dzuhur" />
-                <label for="dzuhur">Dzuhur</label>
+                <label class="shalat-label" for="dzuhur">
+                  <input type="checkbox" id="dzuhur" data-shalat="dzuhur" />
+                  <span class="shalat-circle">
+                    <span class="shalat-check-icon">✓</span>
+                  </span>
+                  <span class="shalat-name">Dzuhur</span>
+                  <span class="shalat-time">11:55</span>
+                </label>
               </div>
               <div class="shalat-item">
-                <input type="checkbox" id="ashar" data-shalat="ashar" />
-                <label for="ashar">Ashar</label>
+                <label class="shalat-label" for="ashar">
+                  <input type="checkbox" id="ashar" data-shalat="ashar" />
+                  <span class="shalat-circle">
+                    <span class="shalat-check-icon">✓</span>
+                  </span>
+                  <span class="shalat-name">Ashar</span>
+                  <span class="shalat-time">15:15</span>
+                </label>
               </div>
               <div class="shalat-item">
-                <input type="checkbox" id="maghrib" data-shalat="maghrib" />
-                <label for="maghrib">Maghrib</label>
+                <label class="shalat-label" for="maghrib">
+                  <input type="checkbox" id="maghrib" data-shalat="maghrib" />
+                  <span class="shalat-circle">
+                    <span class="shalat-check-icon">✓</span>
+                  </span>
+                  <span class="shalat-name">Maghrib</span>
+                  <span class="shalat-time">17:58</span>
+                </label>
               </div>
               <div class="shalat-item">
-                <input type="checkbox" id="isya" data-shalat="isya" />
-                <label for="isya">Isya</label>
+                <label class="shalat-label" for="isya">
+                  <input type="checkbox" id="isya" data-shalat="isya" />
+                  <span class="shalat-circle">
+                    <span class="shalat-check-icon">✓</span>
+                  </span>
+                  <span class="shalat-name">Isya</span>
+                  <span class="shalat-time">19:10</span>
+                </label>
               </div>
             </div>
 
@@ -163,7 +193,7 @@
 
             <div class="quran-inputs">
               <div class="q-input-group">
-                <label for="quranTarget">🎯 Target Halaman</label>
+                <div for="quranTarget">🎯 Target Halaman</div>
                 <input
                   type="number"
                   id="quranTarget"
@@ -173,7 +203,7 @@
                 />
               </div>
               <div class="q-input-group">
-                <label for="quranRead">📑 Halaman Dibaca</label>
+                <div for="quranRead">📑 Halaman Dibaca</div>
                 <input
                   type="number"
                   id="quranRead"
